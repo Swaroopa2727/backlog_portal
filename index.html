@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backlog | Dashboard</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ SIDEBAR ============ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-mark">B</span>
+    <span class="brand-name">Backlog</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-item active">
+      <i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span>
+    </a>
+    <a href="my-tasks.html" class="nav-item">
+      <i class="bi bi-check2-square"></i><span>My Tasks</span>
+      <!-- <span class="nav-badge">12</span> -->
+    </a>
+    <a href="projects.html" class="nav-item">
+      <i class="bi bi-kanban"></i><span>Projects</span>
+    </a>
+    <!-- <a href="#" class="nav-item">
+      <i class="bi bi-calendar3"></i><span>Calendar</span>
+    </a> -->
+    <!-- <a href="#" class="nav-item">
+      <i class="bi bi-activity"></i><span>Activity</span>
+    </a> -->
+
+    <div class="nav-section-label">Issues</div>
+    <a href="all-issues.html" class="nav-item">
+      <i class="bi bi-bug-fill"></i><span>All Issues</span>
+      <!-- <span class="nav-badge">18</span> -->
+    </a>
+    <!--
+    <a href="#" class="nav-item">
+      <i class="bi bi-person-lines-fill"></i><span>My Issues</span>
+      <span class="nav-badge">5</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-send-fill"></i><span>Reported by Me</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-calendar-event"></i><span>Issue Calendar</span>
+    </a>
+    -->
+
+    <!-- <div class="nav-section-label">Files</div>
+    <a href="#" class="nav-item">
+      <i class="bi bi-file-earmark-text"></i><span>Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-person-badge"></i><span>My Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-clock-history"></i><span>Recent Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-trash3"></i><span>Trash</span>
+    </a> -->
+
+    <!--
+    <div class="nav-section-label">Settings</div>
+    <a href="#" class="nav-item">
+      <i class="bi bi-gear-fill"></i><span>Project Settings</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-people-fill"></i><span>Users &amp; Roles</span>
+    </a>
+    -->
+  </nav>
+</aside>
+
+<!-- ============ HEADER (fixed) ============ -->
+<header class="topbar" id="topbar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- <h1 class="page-title">Dashboard</h1> -->
+
+  <!-- <div class="topbar-search">
+    <i class="bi bi-search"></i>
+    <input type="text" placeholder="Search tasks, issues, files...">
+    <kbd>/</kbd>
+  </div> -->
+
+  <div class="topbar-actions">
+    <!-- <button class="icon-btn" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="badge-dot">3</span>
+    </button>
+    <button class="icon-btn" aria-label="Help">
+      <i class="bi bi-question-circle"></i>
+    </button> -->
+    <div class="topbar-user" id="topbarUser" tabindex="0" aria-haspopup="menu" aria-expanded="false">
+      <span class="avatar-circle">S</span>
+      <span class="user-meta">
+        <span class="user-name">Swaroopa Bhupathi</span>
+        <span class="user-role">Project Manager</span>
+      </span>
+      <i class="bi bi-chevron-down user-caret"></i>
+      <div class="user-dropdown" id="userDropdown" role="menu">
+        <!--
+        <div class="user-dropdown-head">
+          <span class="avatar-circle avatar-sm">S</span>
+          <div class="user-dropdown-info">
+            <span class="user-name">Swaroopa Bhupathi</span>
+            <span class="user-role">[email protected]</span>
+          </div>
+        </div>
+        <div class="user-dropdown-divider"></div>
+        <a href="#" class="user-dropdown-item" role="menuitem">
+          <i class="bi bi-person"></i><span>My Account</span>
+        </a>
+        -->
+        <div class="user-dropdown-divider"></div>
+        <a href="login.html" class="user-dropdown-item user-dropdown-logout" role="menuitem">
+          <i class="bi bi-box-arrow-right"></i><span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main class="main-content">
+
+  <div class="welcome-row">
+    <div>
+      <h2 class="page-title">Dashboard</h2>
+      <!-- <h2 class="welcome-title">Welcome back, Swaroopa <span class="wave">👋</span></h2>
+      <p class="welcome-sub">Here's what's happening with your projects today.</p> -->
+    </div>
+    <div class="welcome-actions">
+      <button class="btn btn-week"><i class="bi bi-calendar3 me-2"></i>This Week <i class="bi bi-chevron-down ms-2"></i></button>
+      <!-- <button class="btn btn-new"><i class="bi bi-plus-lg me-2"></i>New Item <i class="bi bi-chevron-down ms-2"></i></button> -->
+    </div>
+  </div>
+
+  <!-- Stat cards -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-icon icon-blue"><i class="bi bi-clipboard-check"></i></div>
+      <div class="stat-label">Total Projects</div>
+      <div class="stat-value">8</div>
+      <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>2 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-green"><i class="bi bi-clipboard2-check"></i></div>
+      <div class="stat-label">Open Tasks</div>
+      <div class="stat-value">32</div>
+      <div class="stat-delta down"><i class="bi bi-arrow-down-short"></i>5 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-orange"><i class="bi bi-bug"></i></div>
+      <div class="stat-label">Open Issues</div>
+      <div class="stat-value">18</div>
+      <div class="stat-delta down"><i class="bi bi-arrow-down-short"></i>3 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-purple"><i class="bi bi-file-earmark"></i></div>
+      <div class="stat-label">Files</div>
+      <div class="stat-value">256</div>
+      <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>18 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-teal"><i class="bi bi-people"></i></div>
+      <div class="stat-label">Team Members</div>
+      <div class="stat-value">24</div>
+      <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>2 from last week</div>
+    </div>
+  </div>
+
+  <!-- Charts row -->
+  <div class="panel-grid panel-grid-3">
+
+    <section class="panel">
+      <div class="panel-head">
+        <h3>Project Overview</h3>
+        <button class="dots-btn"><i class="bi bi-three-dots"></i></button>
+      </div>
+      <div class="donut-row">
+        <div class="donut donut-overview">
+          <div class="donut-center">
+            <span class="donut-percent">32%</span>
+            <span class="donut-caption">Completed</span>
+          </div>
+        </div>
+        <ul class="legend-list">
+          <li><span class="dot dot-green"></span>Completed <span class="legend-val">32% (26)</span></li>
+          <li><span class="dot dot-blue"></span>In Progress <span class="legend-val">41% (33)</span></li>
+          <li><span class="dot dot-yellow"></span>Pending <span class="legend-val">17% (14)</span></li>
+          <li><span class="dot dot-gray"></span>Not Started <span class="legend-val">10% (8)</span></li>
+        </ul>
+      </div>
+      <div class="panel-footer-row">
+        <span>Total Tasks</span>
+        <strong>81</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h3>Tasks by Status</h3>
+        <button class="dots-btn"><i class="bi bi-three-dots"></i></button>
+      </div>
+      <div class="bar-chart">
+        <div class="bar-y-axis">
+          <span>40</span><span>30</span><span>20</span><span>10</span><span>0</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-col">
+            <span class="bar-value">8</span>
+            <div class="bar bar-gray" style="height:20%;"></div>
+            <span class="bar-label">Not Started</span>
+          </div>
+          <div class="bar-col">
+            <span class="bar-value">14</span>
+            <div class="bar bar-yellow" style="height:35%;"></div>
+            <span class="bar-label">Pending</span>
+          </div>
+          <div class="bar-col">
+            <span class="bar-value">33</span>
+            <div class="bar bar-blue" style="height:82.5%;"></div>
+            <span class="bar-label">In Progress</span>
+          </div>
+          <div class="bar-col">
+            <span class="bar-value">26</span>
+            <div class="bar bar-green" style="height:65%;"></div>
+            <span class="bar-label">Completed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h3>Issues by Priority</h3>
+        <button class="dots-btn"><i class="bi bi-three-dots"></i></button>
+      </div>
+      <div class="donut-row">
+        <div class="donut donut-priority">
+          <div class="donut-center">
+            <span class="donut-percent">18</span>
+            <span class="donut-caption">Total Issues</span>
+          </div>
+        </div>
+        <ul class="legend-list">
+          <li><span class="dot dot-red"></span>High <span class="legend-val">6 (33%)</span></li>
+          <li><span class="dot dot-orange"></span>Medium <span class="legend-val">7 (39%)</span></li>
+          <li><span class="dot dot-yellow"></span>Low <span class="legend-val">3 (17%)</span></li>
+          <li><span class="dot dot-gray"></span>Trivial <span class="legend-val">2 (11%)</span></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Lists row -->
+  <div class="panel-grid panel-grid-3">
+
+    <section class="panel list-panel">
+      <div class="panel-head">
+        <h3>My Upcoming Tasks</h3>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <ul class="item-list">
+        <li>
+          <span class="tile tile-pink"><i class="bi bi-card-checklist"></i></span>
+          <span class="item-text">
+            <span class="item-title">Design Login Page</span>
+            <span class="item-sub">Website Redesign</span>
+          </span>
+          <span class="item-date">24 May</span>
+          <span class="badge-pill badge-high">High</span>
+        </li>
+        <li>
+          <span class="tile tile-blue"><i class="bi bi-diagram-3"></i></span>
+          <span class="item-text">
+            <span class="item-title">API Integration</span>
+            <span class="item-sub">Mobile App</span>
+          </span>
+          <span class="item-date">25 May</span>
+          <span class="badge-pill badge-medium">Medium</span>
+        </li>
+        <li>
+          <span class="tile tile-green"><i class="bi bi-clipboard-data"></i></span>
+          <span class="item-text">
+            <span class="item-title">Fix Payment Bug</span>
+            <span class="item-sub">E-commerce Platform</span>
+          </span>
+          <span class="item-date">27 May</span>
+          <span class="badge-pill badge-high">High</span>
+        </li>
+        <li>
+          <span class="tile tile-yellow"><i class="bi bi-journal-text"></i></span>
+          <span class="item-text">
+            <span class="item-title">Update Documentation</span>
+            <span class="item-sub">Internal Tool</span>
+          </span>
+          <span class="item-date">28 May</span>
+          <span class="badge-pill badge-low">Low</span>
+        </li>
+        <li>
+          <span class="tile tile-purple"><i class="bi bi-person-check"></i></span>
+          <span class="item-text">
+            <span class="item-title">User Testing</span>
+            <span class="item-sub">Mobile App</span>
+          </span>
+          <span class="item-date">30 May</span>
+          <span class="badge-pill badge-medium">Medium</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="panel list-panel">
+      <div class="panel-head">
+        <h3>Recent Issues</h3>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <ul class="item-list">
+        <li>
+          <span class="tile tile-red"><i class="bi bi-bug-fill"></i></span>
+          <span class="item-text">
+            <span class="item-title">Login not working on Safari</span>
+            <span class="item-sub">Website Redesign &nbsp;&bull;&nbsp; BUG-125</span>
+          </span>
+          <span class="item-date-col">
+            <span class="badge-pill badge-high">High</span>
+            <span class="item-date">24 May</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-orange"><i class="bi bi-bug-fill"></i></span>
+          <span class="item-text">
+            <span class="item-title">Error when uploading files</span>
+            <span class="item-sub">Document System &nbsp;&bull;&nbsp; BUG-124</span>
+          </span>
+          <span class="item-date-col">
+            <span class="badge-pill badge-medium">Medium</span>
+            <span class="item-date">23 May</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-red"><i class="bi bi-bug-fill"></i></span>
+          <span class="item-text">
+            <span class="item-title">Payment gateway timeout</span>
+            <span class="item-sub">E-commerce Platform &nbsp;&bull;&nbsp; BUG-123</span>
+          </span>
+          <span class="item-date-col">
+            <span class="badge-pill badge-high">High</span>
+            <span class="item-date">22 May</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-orange"><i class="bi bi-bug-fill"></i></span>
+          <span class="item-text">
+            <span class="item-title">UI alignment issue in dashboard</span>
+            <span class="item-sub">Internal Tool &nbsp;&bull;&nbsp; BUG-122</span>
+          </span>
+          <span class="item-date-col">
+            <span class="badge-pill badge-low">Low</span>
+            <span class="item-date">21 May</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-orange"><i class="bi bi-bug-fill"></i></span>
+          <span class="item-text">
+            <span class="item-title">Email notifications not sent</span>
+            <span class="item-sub">Notification Service &nbsp;&bull;&nbsp; BUG-121</span>
+          </span>
+          <span class="item-date-col">
+            <span class="badge-pill badge-medium">Medium</span>
+            <span class="item-date">20 May</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="panel list-panel">
+      <div class="panel-head">
+        <h3>Recently Updated Files</h3>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <ul class="item-list">
+        <li>
+          <span class="tile tile-blue"><i class="bi bi-file-earmark-word"></i></span>
+          <span class="item-text">
+            <span class="item-title">Project Requirements.docx</span>
+            <span class="item-sub">Website Redesign</span>
+          </span>
+          <span class="item-date-col">
+            <span class="item-date">24 May</span>
+            <span class="item-by">by Ram</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-red"><i class="bi bi-file-earmark-pdf"></i></span>
+          <span class="item-text">
+            <span class="item-title">UI/UX Design Mockups.pdf</span>
+            <span class="item-sub">Mobile App</span>
+          </span>
+          <span class="item-date-col">
+            <span class="item-date">23 May</span>
+            <span class="item-by">by Priya</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-green"><i class="bi bi-file-earmark-excel"></i></span>
+          <span class="item-text">
+            <span class="item-title">Sprint Plan.xlsx</span>
+            <span class="item-sub">Internal Tool</span>
+          </span>
+          <span class="item-date-col">
+            <span class="item-date">22 May</span>
+            <span class="item-by">by Kiran</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-orange"><i class="bi bi-file-earmark-image"></i></span>
+          <span class="item-text">
+            <span class="item-title">Architecture Diagram.png</span>
+            <span class="item-sub">E-commerce Platform</span>
+          </span>
+          <span class="item-date-col">
+            <span class="item-date">22 May</span>
+            <span class="item-by">by Ram</span>
+          </span>
+        </li>
+        <li>
+          <span class="tile tile-purple"><i class="bi bi-file-earmark-text"></i></span>
+          <span class="item-text">
+            <span class="item-title">Test Cases.docx</span>
+            <span class="item-sub">QA Testing</span>
+          </span>
+          <span class="item-date-col">
+            <span class="item-date">21 May</span>
+            <span class="item-by">by Anu</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+
+</main>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

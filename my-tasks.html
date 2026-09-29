@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backlog | My Tasks</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ SIDEBAR ============ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-mark">B</span>
+    <span class="brand-name">Backlog</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-item">
+      <i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span>
+    </a>
+    <a href="my-tasks.html" class="nav-item active">
+      <i class="bi bi-check2-square"></i><span>My Tasks</span>
+      <!-- <span class="nav-badge">12</span> -->
+    </a>
+    <a href="projects.html" class="nav-item">
+      <i class="bi bi-kanban"></i><span>Projects</span>
+    </a>
+    <!-- <a href="#" class="nav-item">
+      <i class="bi bi-calendar3"></i><span>Calendar</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-activity"></i><span>Activity</span>
+    </a> -->
+
+    <div class="nav-section-label">Issues</div>
+    <a href="all-issues.html" class="nav-item">
+      <i class="bi bi-bug-fill"></i><span>All Issues</span>
+      <!-- <span class="nav-badge">18</span> -->
+    </a>
+    <!--
+    <a href="#" class="nav-item">
+      <i class="bi bi-person-lines-fill"></i><span>My Issues</span>
+      <span class="nav-badge">5</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-send-fill"></i><span>Reported by Me</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-calendar-event"></i><span>Issue Calendar</span>
+    </a>
+    -->
+
+    <!-- <div class="nav-section-label">Files</div>
+    <a href="#" class="nav-item">
+      <i class="bi bi-file-earmark-text"></i><span>Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-person-badge"></i><span>My Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-clock-history"></i><span>Recent Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-trash3"></i><span>Trash</span>
+    </a> -->
+
+    <!--
+    <div class="nav-section-label">Settings</div>
+    <a href="#" class="nav-item">
+      <i class="bi bi-gear-fill"></i><span>Project Settings</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-people-fill"></i><span>Users &amp; Roles</span>
+    </a>
+    -->
+  </nav>
+</aside>
+
+<!-- ============ HEADER (fixed) ============ -->
+<header class="topbar" id="topbar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- <h1 class="page-title">My Tasks</h1> -->
+
+  <!-- <div class="topbar-search">
+    <i class="bi bi-search"></i>
+    <input type="text" placeholder="Search tasks, issues, files...">
+    <kbd>/</kbd>
+  </div> -->
+
+  <div class="topbar-actions">
+    <!-- <button class="icon-btn" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="badge-dot">3</span>
+    </button>
+    <button class="icon-btn" aria-label="Help">
+      <i class="bi bi-question-circle"></i>
+    </button> -->
+    <div class="topbar-user">
+      <span class="avatar-circle">S</span>
+      <span class="user-meta">
+        <span class="user-name">Swaroopa Bhupathi</span>
+        <span class="user-role">Project Manager</span>
+      </span>
+      <i class="bi bi-chevron-down user-caret"></i>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main class="main-content">
+
+  <div class="welcome-row">
+    <div>
+      <h2 class="welcome-title">My Tasks</h2>
+      <!-- <p class="welcome-sub">View and manage tasks assigned to you.</p> -->
+    </div>
+    <div class="welcome-actions">
+      <button class="btn btn-week"><i class="bi bi-calendar3 me-2"></i>This Week <i class="bi bi-chevron-down ms-2"></i></button>
+      <button class="btn btn-filter"><i class="bi bi-funnel me-2"></i>Filter</button>
+      <button class="icon-btn" aria-label="Download"><i class="bi bi-download"></i></button>
+      <a href="add-task.html" class="btn btn-new">
+        <i class="bi bi-plus-lg me-2"></i>Add Task
+      </a>
+    </div>
+  </div>
+
+  <!-- Stat cards -->
+  <div class="stat-grid stat-grid-5">
+    <div class="stat-card">
+      <div class="stat-icon icon-blue"><i class="bi bi-clipboard-check"></i></div>
+      <div class="stat-label">Total Tasks</div>
+      <div class="stat-value">12</div>
+      <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>2 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-orange"><i class="bi bi-hourglass-split"></i></div>
+      <div class="stat-label">Pending</div>
+      <div class="stat-value">4</div>
+      <div class="stat-delta down"><i class="bi bi-arrow-down-short"></i>1 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-blue"><i class="bi bi-arrow-repeat"></i></div>
+      <div class="stat-label">In Progress</div>
+      <div class="stat-value">5</div>
+      <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>1 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-green"><i class="bi bi-check-circle"></i></div>
+      <div class="stat-label">Completed</div>
+      <div class="stat-value">3</div>
+      <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>2 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon icon-purple"><i class="bi bi-flag"></i></div>
+      <div class="stat-label">Overdue</div>
+      <div class="stat-value">2</div>
+      <div class="stat-delta down"><i class="bi bi-arrow-down-short"></i>1 from last week</div>
+    </div>
+  </div>
+
+  <!-- Table panel -->
+  <section class="panel table-panel">
+
+    <div class="tabs-row">
+      <div class="tabs-list">
+        <button class="tab-item active" type="button">All Tasks</button>
+        <button class="tab-item" type="button">Pending</button>
+        <button class="tab-item" type="button">In Progress</button>
+        <button class="tab-item" type="button">Completed</button>
+        <button class="tab-item" type="button">Overdue</button>
+      </div>
+      <div class="table-search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search in tasks...">
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="task-table">
+        <thead>
+          <tr>
+            <th class="col-check"><input type="checkbox" class="form-check-input"></th>
+            <th>ID</th>
+            <th>Task / Issue</th>
+            <th>Project</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Due Date</th>
+            <th>Tags</th>
+            <th class="col-actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-125</a></td>
+            <td>
+              <span class="item-title">Design Login Page</span>
+              <span class="item-sub">Website Redesign</span>
+            </td>
+            <td>Website Redesign</td>
+            <td><span class="badge-pill badge-high">High</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td>24 May 2024</td>
+            <td><span class="tag-pill tag-blue">Design</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-121</a></td>
+            <td>
+              <span class="item-title">API Integration</span>
+              <span class="item-sub">Mobile App</span>
+            </td>
+            <td>Mobile App</td>
+            <td><span class="badge-pill badge-medium">Medium</span></td>
+            <td><span class="status-pill status-pending">Pending</span></td>
+            <td>25 May 2024</td>
+            <td><span class="tag-pill tag-purple">Integration</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-118</a></td>
+            <td>
+              <span class="item-title">Fix Payment Bug</span>
+              <span class="item-sub">E-commerce Platform</span>
+            </td>
+            <td>E-commerce Platform</td>
+            <td><span class="badge-pill badge-high">High</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td>27 May 2024</td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-115</a></td>
+            <td>
+              <span class="item-title">Update Documentation</span>
+              <span class="item-sub">Internal Tool</span>
+            </td>
+            <td>Internal Tool</td>
+            <td><span class="badge-pill badge-low">Low</span></td>
+            <td><span class="status-pill status-pending">Pending</span></td>
+            <td>28 May 2024</td>
+            <td><span class="tag-pill tag-blue">Documentation</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-112</a></td>
+            <td>
+              <span class="item-title">User Testing</span>
+              <span class="item-sub">Mobile App</span>
+            </td>
+            <td>Mobile App</td>
+            <td><span class="badge-pill badge-medium">Medium</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td>30 May 2024</td>
+            <td><span class="tag-pill tag-yellow">Testing</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-109</a></td>
+            <td>
+              <span class="item-title">UI alignment issue in dashboard</span>
+              <span class="item-sub">Internal Tool</span>
+            </td>
+            <td>Internal Tool</td>
+            <td><span class="badge-pill badge-low">Low</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td>21 May 2024 <span class="overdue-tag">(Overdue)</span></td>
+            <td><span class="tag-pill tag-gray">UI</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-107</a></td>
+            <td>
+              <span class="item-title">Email notifications not sent</span>
+              <span class="item-sub">Notification Service</span>
+            </td>
+            <td>Notification Service</td>
+            <td><span class="badge-pill badge-medium">Medium</span></td>
+            <td><span class="status-pill status-pending">Pending</span></td>
+            <td>20 May 2024 <span class="overdue-tag">(Overdue)</span></td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-105</a></td>
+            <td>
+              <span class="item-title">Payment gateway timeout</span>
+              <span class="item-sub">E-commerce Platform</span>
+            </td>
+            <td>E-commerce Platform</td>
+            <td><span class="badge-pill badge-high">High</span></td>
+            <td><span class="status-pill status-pending">Pending</span></td>
+            <td>22 May 2024 <span class="overdue-tag">(Overdue)</span></td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination-row">
+      <span class="pagination-info">Showing 1 to 8 of 12 tasks</span>
+      <div class="pagination-controls">
+        <select class="per-page-select">
+          <option>10 per page</option>
+          <option>25 per page</option>
+          <option>50 per page</option>
+        </select>
+        <button class="page-nav-btn" disabled><i class="bi bi-chevron-left"></i></button>
+        <button class="page-num active">1</button>
+        <button class="page-num">2</button>
+        <button class="page-nav-btn"><i class="bi bi-chevron-right"></i></button>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

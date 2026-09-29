@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backlog | All Issues</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ SIDEBAR ============ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-mark">B</span>
+    <span class="brand-name">Backlog</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-item">
+      <i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span>
+    </a>
+    <a href="my-tasks.html" class="nav-item">
+      <i class="bi bi-check2-square"></i><span>My Tasks</span>
+      <!-- <span class="nav-badge">12</span> -->
+    </a>
+    <a href="projects.html" class="nav-item">
+      <i class="bi bi-kanban"></i><span>Projects</span>
+    </a>
+    <!-- <a href="#" class="nav-item">
+      <i class="bi bi-calendar3"></i><span>Calendar</span>
+    </a> -->
+    <!-- <a href="#" class="nav-item">
+      <i class="bi bi-activity"></i><span>Activity</span>
+    </a> -->
+
+    <div class="nav-section-label">Issues</div>
+    <a href="all-issues.html" class="nav-item active">
+      <i class="bi bi-bug-fill"></i><span>All Issues</span>
+      <!-- <span class="nav-badge">18</span> -->
+    </a>
+    <!--
+    <a href="#" class="nav-item">
+      <i class="bi bi-person-lines-fill"></i><span>My Issues</span>
+      <span class="nav-badge">5</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-send-fill"></i><span>Reported by Me</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-calendar-event"></i><span>Issue Calendar</span>
+    </a>
+    -->
+
+    <!-- <div class="nav-section-label">Files</div>
+    <a href="#" class="nav-item">
+      <i class="bi bi-file-earmark-text"></i><span>Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-person-badge"></i><span>My Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-clock-history"></i><span>Recent Files</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-trash3"></i><span>Trash</span>
+    </a> -->
+
+    <!--
+    <div class="nav-section-label">Settings</div>
+    <a href="#" class="nav-item">
+      <i class="bi bi-gear-fill"></i><span>Project Settings</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-people-fill"></i><span>Users &amp; Roles</span>
+    </a>
+    -->
+  </nav>
+</aside>
+
+<!-- ============ HEADER (fixed) ============ -->
+<header class="topbar" id="topbar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- <h1 class="page-title">Dashboard</h1> -->
+
+  <!-- <div class="topbar-search">
+    <i class="bi bi-search"></i>
+    <input type="text" placeholder="Search tasks, issues, files...">
+    <kbd>/</kbd>
+  </div> -->
+
+  <div class="topbar-actions">
+    <!-- <button class="icon-btn" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="badge-dot">3</span>
+    </button>
+    <button class="icon-btn" aria-label="Help">
+      <i class="bi bi-question-circle"></i>
+    </button> -->
+    <div class="topbar-user" id="topbarUser" tabindex="0" aria-haspopup="menu" aria-expanded="false">
+      <span class="avatar-circle">S</span>
+      <span class="user-meta">
+        <span class="user-name">Swaroopa Bhupathi</span>
+        <span class="user-role">Project Manager</span>
+      </span>
+      <i class="bi bi-chevron-down user-caret"></i>
+      <div class="user-dropdown" id="userDropdown" role="menu">
+        <!--
+        <div class="user-dropdown-head">
+          <span class="avatar-circle avatar-sm">S</span>
+          <div class="user-dropdown-info">
+            <span class="user-name">Swaroopa Bhupathi</span>
+            <span class="user-role">[email protected]</span>
+          </div>
+        </div>
+        <div class="user-dropdown-divider"></div>
+        <a href="#" class="user-dropdown-item" role="menuitem">
+          <i class="bi bi-person"></i><span>My Account</span>
+        </a>
+        -->
+        <div class="user-dropdown-divider"></div>
+        <a href="login.html" class="user-dropdown-item user-dropdown-logout" role="menuitem">
+          <i class="bi bi-box-arrow-right"></i><span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main class="main-content">
+
+  <div class="welcome-row">
+    <div>
+      <h2 class="page-title">All Issues</h2>
+      <p class="welcome-sub">Track, filter and manage all issues across your projects.</p>
+    </div>
+    <div class="welcome-actions">
+      <button class="btn btn-filter"><i class="bi bi-funnel me-2"></i>Filter</button>
+      <button class="btn btn-filter"><i class="bi bi-download me-2"></i>Export</button>
+      <a href="new-issue.html" class="btn btn-new"><i class="bi bi-plus-lg me-2"></i>New Issue</a>
+    </div>
+  </div>
+
+  <!-- Stat cards -->
+  <div class="stat-grid stat-grid-5">
+    <div class="stat-card stat-card-row">
+      <div class="stat-icon icon-red"><i class="bi bi-bug"></i></div>
+      <div class="stat-card-body">
+        <div class="stat-label">Total Issues</div>
+        <div class="stat-value">18</div>
+        <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>3 from last week</div>
+      </div>
+    </div>
+    <div class="stat-card stat-card-row">
+      <div class="stat-icon icon-red"><i class="bi bi-clock-history"></i></div>
+      <div class="stat-card-body">
+        <div class="stat-label">Open</div>
+        <div class="stat-value">11</div>
+        <div class="stat-delta down"><i class="bi bi-arrow-down-short"></i>2 from last week</div>
+      </div>
+    </div>
+    <div class="stat-card stat-card-row">
+      <div class="stat-icon icon-orange"><i class="bi bi-clock"></i></div>
+      <div class="stat-card-body">
+        <div class="stat-label">In Progress</div>
+        <div class="stat-value">4</div>
+        <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>1 from last week</div>
+      </div>
+    </div>
+    <div class="stat-card stat-card-row">
+      <div class="stat-icon icon-green"><i class="bi bi-check-circle"></i></div>
+      <div class="stat-card-body">
+        <div class="stat-label">Resolved</div>
+        <div class="stat-value">2</div>
+        <div class="stat-delta up"><i class="bi bi-arrow-up-short"></i>1 from last week</div>
+      </div>
+    </div>
+    <div class="stat-card stat-card-row">
+      <div class="stat-icon icon-gray"><i class="bi bi-x-circle"></i></div>
+      <div class="stat-card-body">
+        <div class="stat-label">Closed</div>
+        <div class="stat-value">1</div>
+        <div class="stat-delta down"><i class="bi bi-arrow-down-short"></i>1 from last week</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters panel -->
+  <div class="panel filters-panel">
+    <div class="table-search issues-search">
+      <i class="bi bi-search"></i>
+      <input type="text" placeholder="Search issues...">
+    </div>
+    <div class="filters-group">
+    <select class="filter-select">
+      <option>All Projects</option>
+      <option>Website Redesign</option>
+      <option>Mobile App</option>
+      <option>E-commerce Platform</option>
+      <option>Internal Tool</option>
+      <option>Document System</option>
+      <option>Analytics Dashboard</option>
+    </select>
+    <select class="filter-select">
+      <option>All Status</option>
+      <option>Open</option>
+      <option>In Progress</option>
+      <option>Resolved</option>
+      <option>Closed</option>
+    </select>
+    <select class="filter-select">
+      <option>All Priority</option>
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+    <select class="filter-select">
+      <option>All Assignees</option>
+      <option>Ram</option>
+      <option>Priya</option>
+      <option>Kiran</option>
+      <option>Anu</option>
+      <option>Siva</option>
+    </select>
+    <button class="btn btn-filter"><i class="bi bi-sliders me-2"></i>More Filters</button>
+    </div>
+  </div>
+
+  <!-- Issues table panel -->
+  <section class="panel table-panel">
+
+    <div class="table-scroll">
+      <table class="task-table issues-table">
+        <thead>
+          <tr>
+            <th class="col-check"><input type="checkbox" class="form-check-input"></th>
+            <th>ID</th>
+            <th>Title / Issue</th>
+            <th>Project</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Assignee</th>
+            <th>Reporter</th>
+            <th>Created</th>
+            <th>Due Date</th>
+            <th>Tags</th>
+            <th class="col-actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">BUG-125</a></td>
+            <td>
+              <span class="item-title">Login not working on Safari</span>
+              <span class="item-sub">Users unable to login using Safari browser</span>
+            </td>
+            <td>Website Redesign</td>
+            <td><span class="badge-pill badge-high">High</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-green">R</span>Ram</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-green">R</span>Ram</span></td>
+            <td>20 May 2024</td>
+            <td>24 May 2024</td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-121</a></td>
+            <td>
+              <span class="item-title">API Integration</span>
+              <span class="item-sub">Integrate payment gateway API</span>
+            </td>
+            <td>Mobile App</td>
+            <td><span class="badge-pill badge-medium">Medium</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">P</span>Priya</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">P</span>Priya</span></td>
+            <td>19 May 2024</td>
+            <td>25 May 2024</td>
+            <td><span class="tag-pill tag-purple">Integration</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">BUG-124</a></td>
+            <td>
+              <span class="item-title">Error when uploading files</span>
+              <span class="item-sub">File upload fails on large files</span>
+            </td>
+            <td>Document System</td>
+            <td><span class="badge-pill badge-medium">Medium</span></td>
+            <td><span class="status-pill status-open">Open</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-teal">K</span>Kiran</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-green">R</span>Ram</span></td>
+            <td>18 May 2024</td>
+            <td>23 May 2024</td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-118</a></td>
+            <td>
+              <span class="item-title">Fix Payment Bug</span>
+              <span class="item-sub">Resolve payment validation issue</span>
+            </td>
+            <td>E-commerce Platform</td>
+            <td><span class="badge-pill badge-high">High</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">A</span>Anu</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">P</span>Priya</span></td>
+            <td>17 May 2024</td>
+            <td>27 May 2024</td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">FEATURE-112</a></td>
+            <td>
+              <span class="item-title">Add Dark Mode</span>
+              <span class="item-sub">Implement dark theme option</span>
+            </td>
+            <td>Mobile App</td>
+            <td><span class="badge-pill badge-low">Low</span></td>
+            <td><span class="status-pill status-open">Open</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-orange">S</span>Siva</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">A</span>Anu</span></td>
+            <td>16 May 2024</td>
+            <td>30 May 2024</td>
+            <td><span class="tag-pill tag-teal">Enhancement</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-109</a></td>
+            <td>
+              <span class="item-title">UI alignment issue in dashboard</span>
+              <span class="item-sub">Some UI elements are misaligned</span>
+            </td>
+            <td>Internal Tool</td>
+            <td><span class="badge-pill badge-low">Low</span></td>
+            <td><span class="status-pill status-resolved">Resolved</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-green">R</span>Ram</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-teal">K</span>Kiran</span></td>
+            <td>15 May 2024</td>
+            <td>21 May 2024</td>
+            <td><span class="tag-pill tag-blue">UI</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">BUG-107</a></td>
+            <td>
+              <span class="item-title">Payment gateway timeout</span>
+              <span class="item-sub">Timeout occurring during payment</span>
+            </td>
+            <td>E-commerce Platform</td>
+            <td><span class="badge-pill badge-high">High</span></td>
+            <td><span class="status-pill status-open">Open</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-orange">S</span>Siva</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-green">R</span>Ram</span></td>
+            <td>14 May 2024</td>
+            <td>22 May 2024</td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">TASK-105</a></td>
+            <td>
+              <span class="item-title">Update documentation</span>
+              <span class="item-sub">Update user guide and API docs</span>
+            </td>
+            <td>Document System</td>
+            <td><span class="badge-pill badge-medium">Medium</span></td>
+            <td><span class="status-pill status-progress">In Progress</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">P</span>Priya</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">P</span>Priya</span></td>
+            <td>13 May 2024</td>
+            <td>28 May 2024</td>
+            <td><span class="tag-pill tag-blue">Documentation</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">FEATURE-101</a></td>
+            <td>
+              <span class="item-title">User role permissions</span>
+              <span class="item-sub">Add granular permissions for roles</span>
+            </td>
+            <td>Internal Tool</td>
+            <td><span class="badge-pill badge-medium">Medium</span></td>
+            <td><span class="status-pill status-resolved">Resolved</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-teal">K</span>Kiran</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">A</span>Anu</span></td>
+            <td>12 May 2024</td>
+            <td>18 May 2024</td>
+            <td><span class="tag-pill tag-teal">Enhancement</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+          <tr>
+            <td class="col-check"><input type="checkbox" class="form-check-input"></td>
+            <td><a href="#" class="task-id">BUG-099</a></td>
+            <td>
+              <span class="item-title">Chart not loading in reports</span>
+              <span class="item-sub">Charts not rendering in reports page</span>
+            </td>
+            <td>Analytics Dashboard</td>
+            <td><span class="badge-pill badge-low">Low</span></td>
+            <td><span class="status-pill status-closed">Closed</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-purple">A</span>Anu</span></td>
+            <td><span class="owner-cell"><span class="avatar-circle avatar-xs avatar-orange">S</span>Siva</span></td>
+            <td>10 May 2024</td>
+            <td>15 May 2024</td>
+            <td><span class="tag-pill tag-red">Bug</span></td>
+            <td class="col-actions"><button class="dots-btn"><i class="bi bi-three-dots"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination-row">
+      <span class="pagination-info">Showing 1 to 10 of 18 issues</span>
+      <div class="pagination-controls">
+        <select class="per-page-select">
+          <option>10 per page</option>
+          <option>25 per page</option>
+          <option>50 per page</option>
+        </select>
+        <button class="page-nav-btn" disabled><i class="bi bi-chevron-left"></i></button>
+        <button class="page-num active">1</button>
+        <button class="page-num">2</button>
+        <button class="page-nav-btn"><i class="bi bi-chevron-right"></i></button>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
