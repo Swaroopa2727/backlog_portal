@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Demo: simulate a request, then go to the dashboard
     setTimeout(function () {
-      window.location.href = "index.html";
+      window.location.href = "dashboard.html";
     }, 700);
   });
 });
